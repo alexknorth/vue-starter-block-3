@@ -1,44 +1,38 @@
 <template>
   <div>
     <form>
-      <label for="filterField">
-        Field:
-        <select id="filterField" v-model="filterField">
-          <option value="">Disable filters</option>
-          <option value="isActive">Active user</option>
-          <option value="name">Name</option>
-          <option value="email">Email</option>
-          <option value="balance">Balance</option>
-          <option value="registered">Date registered</option>
-        </select>
-        {{ filterField }}
-      </label>
-      <label for="filterQuery">
-        Query:
-        <input type="text" id="filterQuery" v-model="filterQuery">
-      </label>
-      <span>
-        Active:
-        <label for="userStateActive">
-          Yes:
-          <input type="radio" v-bind:value="true" id="userStateActive" v-model="filterUserState"
+      <div class="">
+        <label for="filterField">Field:</label>
+          <select id="filterField" class="form-control" v-model="filterField" @change="onChange($event)">
+            <option value="">Disable filters</option>
+            <option value="isActive">Active user</option>
+            <option value="name">Name</option>
+            <option value="email">Email</option>
+            <option value="balance">Balance</option>
+            <option value="registered">Date registered</option>
+          </select>
+      </div>
+      <div class="">
+        <label for="filterQuery">Query:</label>
+        <input type="text" id="filterQuery" class="form-control" v-model="filterQuery" :disabled="filterField.length===0">
+      </div>
+      <div class="">
+        <label for="userStateActive">Active: Yes:</label>
+        <input type="radio" v-bind:value="true" id="userStateActive" class="" v-model="filterUserState"
           selected>
-        </label>
-        <label for="userStateInactive">
-          No:
-          <input type="radio" v-bind:value="false" id="userStateInactive" v-model="filterUserState">
-        </label>
-      </span>
+        <label for="userStateInactive">No:</label>
+        <input type="radio" v-bind:value="false" id="userStateInactive" class="" v-model="filterUserState">
+      </div>
     </form>
     <div>
-      <table>
-        <thead class="user-data-header">
+      <table class="table">
+        <thead class="thead-dark">
           <tr>
-            <th>ID</th>
-            <th>Active</th>
-            <th>Balance</th>
-            <th>Name</th>
-            <th>Email</th>
+            <th scope="col">ID</th>
+            <th scope="col">Active</th>
+            <th scope="col">Balance</th>
+            <th scope="col">Name</th>
+            <th scope="col">Email</th>
          <!--   <th>Registered</th> -->
           </tr>
         </thead>
@@ -149,6 +143,11 @@
       formatDate(date) {
         let registered = new Date(date);
         return registered.toLocaleString('en-US');
+      },
+      onChange(event) {
+          if (event.target.value.length === 0){
+            this.filterQuery = '';
+          }
       }
     }
   };
