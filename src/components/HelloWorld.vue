@@ -168,30 +168,35 @@ li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
-  color: #42b983;
-}
 table{
   margin-left: 30vw;
   background-color: #b6aeae85;
   border-radius: 15px;
-  
 }
+/* Table Header Color */
+th {
+    border-bottom: 1px solid;
+}
+/* Table Row Color */
 tr{
   color:#2c3e50;
 }
 td{
   color: #201f1f;
 }
+/* link color */
 a{
   color: #000fff;
 }
+/* Dropdown color */
 select#filterField {
     background: #7fffd4;
 }
+/* Color Radio buttons when clicked */
 th {
     border-bottom: 1px solid;
 }
+/* Color Radio buttons when clicked */
 input[type="radio"]{
   accent-color:red;
 }
