@@ -11,7 +11,7 @@
           <option value="balance">Balance</option>
           <option value="registered">Date registered</option>
         </select>
-        {{ filterField }}      
+        {{ filterField }}
       </label>
       <label for="filterQuery">
         Query:
@@ -126,15 +126,16 @@
     },
     methods: {
       filterRow(user) {
-        return this.filterByUserState(user) || this.filterByQuery(user);
+        return this.filterByUserState(user) && this.filterByQuery(user);
       },
       filterByQuery(user){
-        let result = false;
-        if (this.filterField.length > 0 && this.filterQuery > 0){
+        let result = true;
+        if (this.filterField.length > 0 && this.filterQuery.length > 0){
           let query = this.filterQuery.toLowerCase();
           let filterFieldValue = user[this.filterField].toString().toLowerCase();
           result = filterFieldValue.includes(query);
         }
+        console.log(user.name, ': ' , result);
         return result; 
       },
       filterByUserState(user){
