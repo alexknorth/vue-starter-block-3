@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <HelloWorld/>
+<div> 
+  <img alt="Vue logo" src="https://upload.jln.pw/favion-cropped.png">
+  <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
-
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
@@ -23,5 +23,11 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body{
+  background-color: #9d959585;
+}
+input[type="text"] {
+  background: #7fffd4;
 }
 </style>

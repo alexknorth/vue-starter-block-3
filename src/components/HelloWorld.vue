@@ -171,4 +171,29 @@ li {
 a {
   color: #42b983;
 }
+table{
+  margin-left: 30vw;
+  background-color: #b6aeae85;
+  border-radius: 15px;
+  
+}
+tr{
+  color:#2c3e50;
+}
+td{
+  color: #201f1f;
+}
+a{
+  color: #000fff;
+}
+select#filterField {
+    background: #7fffd4;
+}
+input[type='radio']:checked,
+input[type='radio']:not(:checked) {
+  background-color: #000fff !important;
+}
+th {
+    border-bottom: 1px solid;
+}
 </style>
