@@ -189,10 +189,6 @@ a{
 select#filterField {
     background: #7fffd4;
 }
-input[type='radio']:checked,
-input[type='radio']:not(:checked) {
-  background-color: #000fff !important;
-}
 th {
     border-bottom: 1px solid;
 }
