@@ -1,6 +1,7 @@
 <template>
 <div> 
-  <img alt="Vue logo" src="https://upload.jln.pw/favion-cropped.png">
+  <!-- changed the logo -->
+  <img alt="JG logo" src="https://upload.jln.pw/favion-cropped.png">
   <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -24,9 +25,11 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
+/* changed the default backgroud color */
 body{
   background-color: #9d959585;
 }
+/* text field input color */
 input[type="text"] {
   background: #7fffd4;
 }

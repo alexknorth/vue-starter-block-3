@@ -184,7 +184,7 @@ tr{
 td{
   color: #201f1f;
 }
-/* link color */
+/* Link Color */
 a{
   color: #000fff;
 }
