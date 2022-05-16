@@ -32,7 +32,7 @@
     </form>
     <div>
       <table>
-        <thead>
+        <thead class="user-data-header">
           <tr>
             <th>ID</th>
             <th>Active</th>
@@ -170,4 +170,9 @@ li {
 a {
   color: #42b983;
 }
+
+.user-data-header {
+  background-color: yellow;
+}
+
 </style>
