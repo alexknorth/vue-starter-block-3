@@ -135,7 +135,6 @@
           let filterFieldValue = user[this.filterField].toString().toLowerCase();
           result = filterFieldValue.includes(query);
         }
-        console.log(user.name, ': ' , result);
         return result; 
       },
       filterByUserState(user){
