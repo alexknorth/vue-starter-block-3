@@ -172,7 +172,7 @@ a {
 }
 
 .user-data-header {
-  background-color: yellow;
+  background-color: red;
 }
 
 </style>
