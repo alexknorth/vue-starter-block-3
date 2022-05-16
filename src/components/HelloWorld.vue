@@ -192,4 +192,7 @@ select#filterField {
 th {
     border-bottom: 1px solid;
 }
+input[type="radio"]{
+  accent-color:red;
+}
 </style>
