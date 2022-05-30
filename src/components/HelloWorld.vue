@@ -5,7 +5,7 @@
         <label for="filterField">Field:</label>
           <select id="filterField" class="form-control" v-model="filterField" @change="onChange($event)">
             <option value="">Disable filters</option>
-            <option value="isActive">Active user</option>
+          <!--   <option value="isActive">Active user</option> -->
             <option value="name">Name</option>
             <option value="email">Email</option>
             <option value="balance">Balance</option>
