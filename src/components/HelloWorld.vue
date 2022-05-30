@@ -5,7 +5,6 @@
         <label for="filterField">Field:</label>
           <select id="filterField" class="form-control" v-model="filterField" @change="onChange($event)">
             <option value="">Disable filters</option>
-            <option value="isActive">Active user</option>
             <option value="name">Name</option>
             <option value="email">Email</option>
             <option value="balance">Balance</option>
@@ -49,6 +48,7 @@
           </tr>
         </tbody>
       </table> 
+      {{liveData}}
     </div>
   </div>
 </template>
@@ -110,13 +110,45 @@
             "email": "casehewitt@bitrex.com",
             "registered": "201403-17T02:35:20"
           }
-        ]
+        ],
+        liveData: {}
       };
     },
     mounted () {
      // axios
      //   .get('https://reqres.in/api/users?page=2')
      //   .then(response => (this.users = response.data.data))
+
+
+      let connection = new WebSocket('wss://api.hitbtc.com/api/3/ws/public');
+      connection.onopen = function () { 
+
+          connection.send(JSON.stringify({
+            method: 'subscribe',
+            ch: 'orderbook/top/1000ms',
+              params: {
+                  symbols: ['ETHBTC', 'BTCUSDT']
+              },
+            id: 123
+      }));
+
+      }
+      connection.onmessage = (event) => {
+        const data = event.data;
+        console.log('received a message: ', data);
+        console.log(event);
+        this.liveData = data;
+      }
+
+      connection.onerror = (event) => {
+        console.log('error: ', event);
+      }
+
+      connection.onclose = (event) => {
+        console.log('close: ', event);
+      }
+
+
     },
     methods: {
       filterRow(user) {
